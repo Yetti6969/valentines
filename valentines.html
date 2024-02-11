@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="inamorata" >
+    <title>Valentine's</title>
+    <link rel="stylesheet" href="vstyle.css">
+</head>
+<body>
+
+
+
+    <div class="container">
+    
+    
+    
+    
+    
+    
+    <audio controls="" src="./S.A. Karl - Equus.mp3"> </audio>
+    
+    <div class="happy">
+      <div class="card">
+        <div class="cloud"></div>
+        <div class="heart">
+            <div class="one">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="one">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="two">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="three">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="four">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <div class="five">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="text"><span>Wanna Be</br> My Valentine?</div>
+      </div>
+    </div>
+    <button class = "button yes-button" id="yesButton">Yes</button>
+    <button class = "button no-button" id="noButton">No</button>
+    </div>
+    <script>
+        const pinkb = document.getElementById('yesButton');
+        const redb = document.getElementById('noButton');
+        const c = document.getElementById('happy')
+        let clickCount = 0;
+
+    const texts = [
+     "No is not an option" ,  
+    "Wtf Ariadna, just press yes",
+                  
+                  ];
+    redb.addEventListener('click', () => {
+        if (clickCount< texts.length){
+            redb.textContent = texts[clickCount];
+        }
+    
+    clickCount++;
+    if (clickCount===3){
+        redb.remove();
+        pinkb.textContent ="Yes, I do!!!";}
+    else {
+        const currentSize = window.getComputedStyle(pinkb).
+        getPropertyValue('font-size');
+        const newSize = parseFloat(currentSize) * 1.5 ;
+        pinkb.style.fontSize = newSize + 'px' ;
+
+    }
+});
+
+   pinkb.addEventListener('click', () => {
+    pinkb.innerHTML= "Thought so.";
+    redb.remove();
+   
+    pinkb.style.fontSize = "3em";
+   });
+
+    
+
+    
+    </script>
+
+
+</body>
+</html>
